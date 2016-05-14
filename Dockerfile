@@ -3,7 +3,7 @@ FROM chambana/uwsgi-php:latest
 MAINTAINER Josh King <jking@chambana.net>
 
 RUN apt-get -qq update && \
-	apt-get install -y --no-install-recommends unzip && \
+	apt-get install -y --no-install-recommends unzip wget && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
