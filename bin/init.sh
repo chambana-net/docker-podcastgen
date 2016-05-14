@@ -6,7 +6,7 @@ CHECK_BIN "wget"
 CHECK_BIN "unzip"
 CHECK_BIN "uwsgi"
 
-DIR=/var/www/PodcastGenerator-Master
+DIR=/var/www/PodcastGenerator-master
 
 if [[ ! -d $DIR ]]; then
 	MSG "Downloading podcastgen..."
