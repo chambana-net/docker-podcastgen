@@ -1,6 +1,6 @@
 #!/bin/bash - 
 
-. /opt/chambana/lib/common.sh
+. /app/lib/common.sh
 
 CHECK_BIN "wget"
 CHECK_BIN "unzip"
