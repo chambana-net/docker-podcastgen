@@ -14,7 +14,8 @@ VOLUME ["/var/www"]
 ADD podcastgen.conf /etc/uwsgi/apps-available/podcastgen.conf
 
 ## Add startup script.
-ADD bin/init.sh /app/bin/init.sh
-RUN chmod 0755 /app/bin/init.sh
+ADD bin/run.sh /app/bin/run.sh
+RUN chmod 0755 /app/bin/run.sh
 
-CMD ["/app/bin/init.sh"]
+ENTRYPOINT ["/app/bin/run.sh"]
+CMD ["uwsgi", "--uid", "www-data", "--gid", "www-data", "--ini", "/etc/uwsgi/apps-available/podcastgen.conf"]

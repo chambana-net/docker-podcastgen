@@ -18,4 +18,5 @@ if [[ ! -d $DIR ]]; then
 fi
 
 MSG "Serving site..."
-uwsgi --uid www-data --gid www-data --ini /etc/uwsgi/apps-available/podcastgen.conf
+
+exec "$@"
