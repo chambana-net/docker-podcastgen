@@ -7,6 +7,8 @@ RUN apt-get -qq update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
+ENV PODCASTGEN_VERSION 2.7
+
 EXPOSE 80
 
 VOLUME ["/var/www"]
