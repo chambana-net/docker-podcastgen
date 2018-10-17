@@ -18,8 +18,8 @@ if [[ ! -d $DIR ]]; then
 	[[ $? -eq 0 ]] || { ERR "Failed to unzip podcastgen, perhaps file is invalid?"; exit 1; }
 	[[ -d $DIR ]] || { ERR "Directory $DIR does not exist, aborting."; exit 1; }
 	chown -R www-data:www-data /var/www/
-	sed -i -e "s/^php-docroot\ *=.*/php-docroot\ =\ ${DIR}/" \
-		-e "s/^static-safe\ *=\ {{\ PODCASTGEN_DIR\ }}/static-safe\ =\ ${DIR}/" \
+	sed -i -e "s#^php-docroot\ *=.*#php-docroot\ =\ ${DIR}#" \
+		-e "s#^static-safe\ *=\ {{\ PODCASTGEN_DIR\ }}#static-safe\ =\ ${DIR}#" \
 		/etc/uwsgi/apps-available/podcastgen.conf
 fi
 
