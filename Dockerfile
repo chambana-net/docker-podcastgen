@@ -3,7 +3,7 @@ FROM chambana/uwsgi-php:latest
 MAINTAINER Josh King <jking@chambana.net>
 
 RUN apt-get -qq update && \
-	apt-get install -y --no-install-recommends ca-certificates unzip wget && \
+	apt-get install -y --no-install-recommends ca-certificates unzip wget php-xml && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
